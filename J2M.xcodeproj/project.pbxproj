@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8091F3191F15BC6200DFAC78 /* J2M.h in Headers */ = {isa = PBXBuildFile; fileRef = 8091F3171F15BC6200DFAC78 /* J2M.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8091F3201F15BC9600DFAC78 /* J2M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091F31F1F15BC9600DFAC78 /* J2M.swift */; };
+		8098FFA21F4C13AF00F2028D /* J2M.h in Headers */ = {isa = PBXBuildFile; fileRef = 8098FFA01F4C136000F2028D /* J2M.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8098FFA31F4C13C600F2028D /* J2M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8098FFA11F4C136000F2028D /* J2M.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8091F3141F15BC6200DFAC78 /* J2M.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = J2M.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8091F3171F15BC6200DFAC78 /* J2M.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = J2M.h; sourceTree = "<group>"; };
-		8091F3181F15BC6200DFAC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8091F31F1F15BC9600DFAC78 /* J2M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = J2M.swift; sourceTree = "<group>"; };
+		8098FF9F1F4C136000F2028D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8098FFA01F4C136000F2028D /* J2M.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = J2M.h; sourceTree = "<group>"; };
+		8098FFA11F4C136000F2028D /* J2M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = J2M.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +32,7 @@
 		8091F30A1F15BC6200DFAC78 = {
 			isa = PBXGroup;
 			children = (
-				8091F3161F15BC6200DFAC78 /* J2M */,
+				8098FF9E1F4C136000F2028D /* Source */,
 				8091F3151F15BC6200DFAC78 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,14 +45,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8091F3161F15BC6200DFAC78 /* J2M */ = {
+		8098FF9E1F4C136000F2028D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8091F3171F15BC6200DFAC78 /* J2M.h */,
-				8091F3181F15BC6200DFAC78 /* Info.plist */,
-				8091F31F1F15BC9600DFAC78 /* J2M.swift */,
+				8098FF9F1F4C136000F2028D /* Info.plist */,
+				8098FFA01F4C136000F2028D /* J2M.h */,
+				8098FFA11F4C136000F2028D /* J2M.swift */,
 			);
-			path = J2M;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,7 +62,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8091F3191F15BC6200DFAC78 /* J2M.h in Headers */,
+				8098FFA21F4C13AF00F2028D /* J2M.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +99,7 @@
 					8091F3131F15BC6200DFAC78 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -134,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8091F3201F15BC9600DFAC78 /* J2M.swift in Sources */,
+				8098FFA31F4C13C600F2028D /* J2M.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,17 +260,20 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D4MTBNMTU5;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = J2M/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jiar.J2M;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -282,17 +286,20 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D4MTBNMTU5;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = J2M/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jiar.J2M;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +325,7 @@
 				8091F31E1F15BC6200DFAC78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
