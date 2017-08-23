@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Jiar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for J2M.
 FOUNDATION_EXPORT double J2MVersionNumber;

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:J2M.playground">
-   </FileRef>
-   <FileRef
       location = "group:J2M.xcodeproj">
    </FileRef>
 </Workspace>

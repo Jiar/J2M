@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Jiar. All rights reserved.
 //
 
+import Foundation
+
 public final class J2M<Base> {
     public let base: Base
     public init(_ base: Base) {
