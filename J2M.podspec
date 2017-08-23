@@ -1,8 +1,16 @@
 Pod::Spec.new do |s|
 
   s.name = "J2M"
-  s.version = "1.0.0"
-  s.summary = "基于swift4的Codable协议实现的json与model互相转换框架"
+  s.version = "1.1.0"
+  s.summary = "J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4."
+
+  s.description  = <<-DESC
+  
+                   J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4.
+
+                   It supports: iOS macOS tvOS
+
+                   DESC
 
   s.homepage = "https://github.com/Jiar/J2M"
   s.license = { :type => "MIT", :file => "LICENSE" }
