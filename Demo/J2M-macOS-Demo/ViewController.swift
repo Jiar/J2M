@@ -10,7 +10,6 @@ import Cocoa
 import J2M
 
 //////////////////// Codable Model
-@IBOutlet weak var label: UILabel!
 
 struct Article: Codable {
     
