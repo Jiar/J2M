@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://raw.githubusercontent.com/Jiar/J2M/master/Logo/logo.png" alt="J2M" title="J2M" width="557"/>
+<img src="https://raw.githubusercontent.com/Jiar/J2M/master/Logo/logo.png" alt="J2M" title="J2M" width="642" height="203"/>
 
 </p>
 
@@ -33,7 +33,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'J2M', '~> 1.1.0'
+  pod 'J2M', '~> 1.1.0'
 end
 ```
 
@@ -47,27 +47,27 @@ import J2M
 ### Model:
 ```Swift
 struct Article: Codable {
-	
-	enum `Type`: String, Codable {
-		case story   = "story"
-		case job     = "job"
-	}
-	
-	let id: Int
-	let deleted: Bool
-	let type: Type
-	let title: String
-	let text: String?
-	let authorId: Int
-	let authorName: String
-	let created: TimeInterval
-	let comments: [Int]?
-	
-	// Key Mapping
-	private enum CodingKeys : String, CodingKey {
-		case id = "articleId", deleted, type, title, text, authorId, authorName, created = "createTime", comments
-	}
-	
+
+  enum `Type`: String, Codable {
+    case story = "story"
+    case job   = "job"
+  }
+
+  let id: Int
+  let deleted: Bool
+  let type: Type
+  let title: String
+  let text: String?
+  let authorId: Int
+  let authorName: String
+  let created: TimeInterval
+  let comments: [Int]?
+
+  // Key Mapping
+  private enum CodingKeys : String, CodingKey {
+    case id = "articleId", deleted, type, title, text, authorId, authorName, created = "createTime", comments
+  }
+
 }
 ```
 
@@ -76,35 +76,35 @@ struct Article: Codable {
 let article = Article(id: 1, deleted: false, type: .story, title: "title", text: "content", authorId: 1, authorName: "Jiar", created: Date().timeIntervalSince1970, comments: [1, 2, 3])
 
 if let json = article.j2m.toJson() {
-	// {"comments":[1,2,3],"deleted":false,"authorId":1,"title":"title","text":"content","authorName":"Jiar","type":"story","articleId":1,"createTime":1503495092.778208}
-	print("\n\(json)\n")
+  // {"comments":[1,2,3],"deleted":false,"authorId":1,"title":"title","text":"content","authorName":"Jiar","type":"story","articleId":1,"createTime":1503495092.778208}
+  print("\n\(json)\n")
 }
 ```
 
 ### String Decode:
 ```Swift
 let json =
-	"""
-	{"deleted":false,"authorId":2,"title":"title2","text":"content2","authorName":"Jiar","type":"job","articleId":1,"createTime":1503384985.8531871}
-	"""
-	
+  """
+  {"deleted":false,"authorId":2,"title":"title2","text":"content2","authorName":"Jiar","type":"job","articleId":1,"createTime":1503384985.8531871}
+  """
+
 if let article = json.j2m.toModel(type: Article.self) {
-	// Article(id: 1, deleted: false, type: J2M_Demo.Article.Type.job, title: "title2", text: Optional("content2"), authorId: 2, authorName: "Jiar", created: 1503384985.8531871, comments: nil)
-	print("\n\(article)\n")
+  // Article(id: 1, deleted: false, type: J2M_Demo.Article.Type.job, title: "title2", text: Optional("content2"), authorId: 2, authorName: "Jiar", created: 1503384985.8531871, comments: nil)
+  print("\n\(article)\n")
 }
 ```
 
 ### Data Decode:
 ```Swift
 let data =
-	"""
-	{"deleted":true,"authorId":3,"title":"title3","authorName":"Jiar","type":"story","articleId":1,"createTime":1503384985.8531871,"comments":[4,5]}
-	"""
-	.data(using: .utf8)!
+  """
+  {"deleted":true,"authorId":3,"title":"title3","authorName":"Jiar","type":"story","articleId":1,"createTime":1503384985.8531871,"comments":[4,5]}
+  """
+  .data(using: .utf8)!
 		
 if let article = data.j2m.toModel(type: Article.self) {
-	// Article(id: 1, deleted: true, type: J2M_Demo.Article.Type.story, title: "title3", text: nil, authorId: 3, authorName: "Jiar", created: 1503384985.8531871, comments: Optional([4, 5]))
-	print("\n\(article)\n")
+  // Article(id: 1, deleted: true, type: J2M_Demo.Article.Type.story, title: "title3", text: nil, authorId: 3, authorName: "Jiar", created: 1503384985.8531871, comments: Optional([4, 5]))
+  print("\n\(article)\n")
 }
 ```
 
