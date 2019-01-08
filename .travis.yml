@@ -1,6 +1,6 @@
-language: objective-c
+language: swift
 os: osx
-osx_image: xcode10
+osx_image: xcode10.1
 env: SWIFT_SNAPSHOT=4.2
 
 cache: cocoapods
@@ -22,17 +22,17 @@ script:
   - |
     set -o pipefail;
     if [ "$TEST_TYPE" = iOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-Demo -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-Demo -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
     elif [ "$TEST_TYPE" = macOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS -sdk macosx -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS-Demo -sdk macosx -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-macOS -sdk macosx -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS-Demo -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
     elif [ "$TEST_TYPE" = tvOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS-Demo -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -enableCodeCoverage YES | xcpretty -c;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS-Demo -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
     fi
   - pod lib lint --allow-warnings
 
