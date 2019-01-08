@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8091F3131F15BC6200DFAC78"
+               BuildableName = "J2M.framework"
+               BlueprintName = "J2M"
+               ReferencedContainer = "container:J2M.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "800511751F4C312100E249C3"
                BuildableName = "J2M-Demo.app"
                BlueprintName = "J2M-Demo"
@@ -29,6 +43,16 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "803771461F4D112700162746"
+               BuildableName = "J2MTests.xctest"
+               BlueprintName = "J2MTests"
+               ReferencedContainer = "container:J2M.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

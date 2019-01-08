@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "803771651F4D154700162746"
+               BuildableName = "J2M.framework"
+               BlueprintName = "J2M-tvOS"
+               ReferencedContainer = "container:J2M.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "803771731F4D163400162746"
                BuildableName = "J2M-tvOS-Demo.app"
                BlueprintName = "J2M-tvOS-Demo"
@@ -29,6 +43,16 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "803771871F4D18FD00162746"
+               BuildableName = "J2MTests-tvOS.xctest"
+               BlueprintName = "J2MTests-tvOS"
+               ReferencedContainer = "container:J2M.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
