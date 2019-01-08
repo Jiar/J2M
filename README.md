@@ -15,7 +15,7 @@
 <a href="https://weibo.com/u/2268197591"><img src="https://img.shields.io/badge/weibo-@Jiar-red.svg"></a>
 </p>
 
-J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4.
+J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift.
 
 ## Requirements
 
