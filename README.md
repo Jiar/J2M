@@ -11,6 +11,7 @@
 <a href="https://github.com/Jiar/J2M/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/J2M.svg?style=flat"></a>
 <a href="https://github.com/Jiar/J2M"><img src="https://img.shields.io/cocoapods/p/J2M.svg?style=flat"></a>
 <a href="https://codebeat.co/projects/github-com-jiar-j2m-master"><img alt="codebeat badge" src="https://codebeat.co/badges/2a9871ed-7c22-4a24-8267-d52499ee7ff9" /></a>
+<a href="https://codecov.io/gh/Jiar/J2M"><img src="https://codecov.io/gh/Jiar/J2M/branch/master/graph/badge.svg"/></a>
 <a href="https://twitter.com/JiarYoo"><img src="https://img.shields.io/badge/twitter-@JiarYoo-blue.svg"></a>
 <a href="https://weibo.com/u/2268197591"><img src="https://img.shields.io/badge/weibo-@Jiar-red.svg"></a>
 </p>
