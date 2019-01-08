@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "J2M"
-  s.version = "1.1.0"
+  s.version = "1.2.0"
   s.summary = "J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4."
 
   s.description  = <<-DESC
@@ -29,5 +29,5 @@ Pod::Spec.new do |s|
   s.module_name = 'J2M'
   s.requires_arc = true
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 end
