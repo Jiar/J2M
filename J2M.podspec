@@ -2,11 +2,11 @@ Pod::Spec.new do |s|
 
   s.name = "J2M"
   s.version = "1.2.0"
-  s.summary = "J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4."
+  s.summary = "J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift."
 
   s.description  = <<-DESC
   
-                   J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift4.
+                   J2M is the json and model transformation framework that is implemented based on the Codable protocol of swift.
 
                    It supports: iOS macOS tvOS
 
