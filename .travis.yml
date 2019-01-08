@@ -22,27 +22,20 @@ script:
   - |
     set -o pipefail;
     if [ "$TEST_TYPE" = iOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-Demo -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-Demo -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
     elif [ "$TEST_TYPE" = macOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS-Demo -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS-Demo -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-macOS -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
     elif [ "$TEST_TYPE" = tvOS ]; then
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS-Demo -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS-Demo -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2MTests-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES | xcpretty -c;
     fi
   - pod lib lint --allow-warnings
 
 after_success:
   - sleep 3
-  - |
-    if [ "$TEST_TYPE" = iOS ]; then
-      bash <(curl -s https://codecov.io/bash) -J 'J2M';
-    elif [ "$TEST_TYPE" = macOS ]; then
-      bash <(curl -s https://codecov.io/bash) -J 'J2M-macOS';
-    elif [ "$TEST_TYPE" = tvOS ]; then
-      bash <(curl -s https://codecov.io/bash) -J 'J2M-tvOS';
-    fi
+  - bash <(curl -s https://codecov.io/bash)
