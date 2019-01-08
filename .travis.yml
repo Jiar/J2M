@@ -37,7 +37,12 @@ script:
   - pod lib lint --allow-warnings
 
 after_success:
-  - sleep 5
-  - if [ "$TEST_TYPE" = iOS ] || [ "$TEST_TYPE" = macOS ] || [ "$TEST_TYPE" = tvOS ]; then
-      bash <(curl -s https://codecov.io/bash) -J 'J2M' -J 'J2M-macOS' -J 'J2M-tvOS'
+  - sleep 3
+  - |
+    if [ "$TEST_TYPE" = iOS ]; then
+      bash <(curl -s https://codecov.io/bash) -J 'J2M';
+    elif [ "$TEST_TYPE" = macOS ]; then
+      bash <(curl -s https://codecov.io/bash) -J 'J2M-macOS';
+    elif [ "$TEST_TYPE" = tvOS ]; then
+      bash <(curl -s https://codecov.io/bash) -J 'J2M-tvOS';
     fi
