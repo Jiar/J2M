@@ -15,13 +15,13 @@ script:
 - |
     if [ "$TEST_TYPE" = iOS ]; then
       set -o pipefail
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0' -enableCodeCoverage YES | xcpretty
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.0' -enableCodeCoverage YES | xcpretty
     elif [ "$TEST_TYPE" = macOS ]; then
       set -o pipefail
       xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-macOS -sdk macosx -enableCodeCoverage YES | xcpretty
     elif [ "$TEST_TYPE" = tvOS ]; then
       set -o pipefail
-      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV 1080p" -enableCodeCoverage YES | xcpretty
+      xcodebuild clean test -workspace J2M.xcworkspace -scheme J2M-tvOS -destination "platform=tvOS Simulator,name=Apple TV,OS=12.0" -enableCodeCoverage YES | xcpretty
     fi
 after_success:
     - sleep 5
